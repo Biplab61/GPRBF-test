@@ -304,3 +304,31 @@
 // 	})
 // }
 
+
+
+const searchName = () =>{
+	const searchBox = document.getElementById("search-input").value.toUpperCase();
+    const memNames = document.getElementById("Names");
+	const member = document.querySelectorAll(".wow");
+	const memName = memNames.getElementsByTagName("h4");
+
+	for (var i=0; i < memName.length; i++)
+	{
+		let match = member[i].getElementsByTagName("h4")[0];
+
+		if(match)
+		{
+			let searchValue = match.textContent || match.innerHTML;
+
+			if(searchValue.toUpperCase().indexOf(searchBox) > -1)
+			{
+				member[i].style.display ="";
+			}
+			else
+			{
+				member[i].style.display ="none";
+				
+			}
+		}
+	}
+}
